@@ -1,0 +1,146 @@
+va-Clase2/3_Persona-Auto-Vehiculo
+Auto.class
+public class Auto {
+  private String Patente;
+  private static int cantidadDeAutos;
+  public Auto (String patente){
+      this.Patente = patente;
+      cantidadDeAutos ++;
+  }
+  public static int getcantidad(){
+      return cantidadDeAutos;
+  }
+}
+Persona.class
+public class Persona {
+    
+    /** Creates a new instance of Persona */
+    public Persona() {
+    }
+    
+    public Persona(String nombre, String apellido, String numeroDocumento) {
+        setNombre(nombre);
+        setApellido(apellido);
+        setNumeroDocumento(numeroDocumento);
+    }    
+    
+    // Atributos
+    private String nombre;
+    private String apellido;
+    private String numeroDocumento;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getNumeroDocumento() {
+        return numeroDocumento;
+    }
+
+    public void setNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
+    }
+    
+}
+Programa.java
+public class Programa {
+    
+    /** Creates a new instance of TestIntegrador01 */
+    public Programa() {
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        // Construye e informa un auto
+        System.out.println("\nCreando una persona....");
+        Persona p1 = new Persona("Juan", "Hernandez", "22.639.456");
+        System.out.println("Nombre: " + p1.getNombre());
+        System.out.println("Apellido: " + p1.getApellido());
+        System.out.println("Numero de Documento: " + p1.getNumeroDocumento());
+        
+        // Construye e informa un vehiculo
+        System.out.println("\nCreando un vehiculo....");
+        Vehiculo v1 = new Vehiculo(215, 345, 98);
+        System.out.println("Ancho:" + v1.getAncho());
+        System.out.println("Altura: " + v1.getAltura());
+        System.out.println("Largo: " + v1.getLargo());
+        System.out.println (Auto.getcantidad());
+        Auto A1 = new Auto("ABC 456");
+        System.out.println (Auto.getcantidad());
+        
+    }
+    
+}
+Vehiculo.class
+public class Vehiculo {
+    
+    /** Creates a new instance of Vehiculo */
+    public Vehiculo() {
+    }
+    
+    public Vehiculo(int ancho, int largo, int altura){
+        setAncho(ancho);
+        setLargo(largo);
+        setAltura(altura);
+    }
+    
+    // Atributos
+    private int ancho;
+    private int largo;
+    private int altura;
+    private String patente;
+    
+    public int getAncho() {
+        return ancho;
+    }
+
+    public void setAncho(int ancho) {
+        this.ancho = ancho;
+    }
+
+    public int getLargo() {
+        return largo;
+    }
+
+    public void setLargo(int largo) {
+        this.largo = largo;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
+
+    /**
+     * @return the patente
+     */
+    public String getPatente() {
+        return patente;
+    }
+
+    /**
+     * @param patente the patente to set
+     */
+    public void setPatente(String patente) {
+        this.patente = patente;
+    }
+    
+}
